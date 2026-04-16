@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
@@ -61,7 +61,7 @@ export default function ApplyNow() {
                 'Free consultation with a funding specialist',
                 'Multiple offers to compare side-by-side',
                 'Funding in as fast as 24 hours',
-                'Soft pull only — no impact to your credit score',
+                'Soft pull only â€” no impact to your credit score',
               ].map(item => (
                 <div key={item} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
@@ -118,10 +118,10 @@ export default function ApplyNow() {
                     <label htmlFor="a-rev" className="block text-sm font-medium text-slate-700 mb-1.5">Monthly Revenue</label>
                     <select id="a-rev" required value={form.monthlyRevenue} onChange={e => update('monthlyRevenue', e.target.value)} className={`${inputClass} appearance-none`}>
                       <option value="">Select range</option>
-                      <option value="10k-25k">$10,000 – $25,000</option>
-                      <option value="25k-50k">$25,000 – $50,000</option>
-                      <option value="50k-100k">$50,000 – $100,000</option>
-                      <option value="100k-250k">$100,000 – $250,000</option>
+                      <option value="10k-25k">$10,000 â€“ $25,000</option>
+                      <option value="25k-50k">$25,000 â€“ $50,000</option>
+                      <option value="50k-100k">$50,000 â€“ $100,000</option>
+                      <option value="100k-250k">$100,000 â€“ $250,000</option>
                       <option value="250k+">$250,000+</option>
                     </select>
                   </div>
@@ -152,3 +152,4 @@ export default function ApplyNow() {
     </section>
   );
 }
+
