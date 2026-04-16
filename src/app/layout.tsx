@@ -1,6 +1,8 @@
 ﻿import type { Metadata, Viewport } from 'next'
 import { Instrument_Serif, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import { PostsProvider } from '@/lib/PostsContext'
+import { AuthProvider } from '@/lib/AuthContext'
 
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
@@ -115,7 +117,11 @@ export default function RootLayout({
       className={`${instrumentSerif.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen bg-white text-neutral-800 antialiased">
-        {children}
+        <AuthProvider>
+          <PostsProvider>
+            {children}
+          </PostsProvider>
+        </AuthProvider>
       </body>
     </html>
   )
