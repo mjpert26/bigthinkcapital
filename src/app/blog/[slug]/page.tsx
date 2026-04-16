@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
@@ -171,7 +171,7 @@ export default function BlogPostPage() {
                   </div>
                   <h3 className="font-display text-3xl md:text-4xl text-white mb-3">Need funding for your business?</h3>
                   <p className="text-blue-100 mb-6 max-w-md mx-auto leading-relaxed">Check your eligibility in under 2 minutes. No impact on your credit score.</p>
-                  <a href="https://apply.bigthinkcapital.com/sign-up" className="inline-flex items-center gap-2 px-8 py-4 bg-[#f59e0b] hover:bg-[#fbbf24] text-[#0e2366] font-bold rounded-xl transition-all transform hover:-translate-y-0.5 shadow-lg shadow-[#f59e0b]/30">
+                  <a href="/apply" className="inline-flex items-center gap-2 px-8 py-4 bg-[#f59e0b] hover:bg-[#fbbf24] text-[#0e2366] font-bold rounded-xl transition-all transform hover:-translate-y-0.5 shadow-lg shadow-[#f59e0b]/30">
                     Check Eligibility
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </a>
@@ -207,7 +207,7 @@ export default function BlogPostPage() {
                     <div className="text-xs font-semibold uppercase tracking-wider text-[#fbbf24] mb-2">Get Funded Fast</div>
                     <h4 className="font-display text-2xl mb-3 leading-tight">See how much you qualify for</h4>
                     <p className="text-sm text-blue-100 mb-5 leading-relaxed">Check your eligibility in 2 minutes. No impact to your credit score.</p>
-                    <a href="https://apply.bigthinkcapital.com/sign-up" className="flex items-center justify-center gap-2 w-full py-3 bg-[#f59e0b] hover:bg-[#fbbf24] text-[#0e2366] font-bold rounded-xl transition-all text-sm">
+                    <a href="/apply" className="flex items-center justify-center gap-2 w-full py-3 bg-[#f59e0b] hover:bg-[#fbbf24] text-[#0e2366] font-bold rounded-xl transition-all text-sm">
                       Check Eligibility
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
@@ -311,3 +311,4 @@ export default function BlogPostPage() {
     </>
   );
 }
+
