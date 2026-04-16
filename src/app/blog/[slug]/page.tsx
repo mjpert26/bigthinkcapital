@@ -47,8 +47,11 @@ export default function BlogPostPage() {
             <p className="text-neutral-500 mb-8">The article you are looking for does not exist or has been unpublished.</p>
             <Link href="/" className="btn-primary">Back to Articles</Link>
           </div>
-        </main>
-        <Footer />
+      </main>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <BlogApplyForm />
+      </div>
+      <Footer />
       </>
     );
   }
@@ -224,10 +227,14 @@ export default function BlogPostPage() {
           </div>
         )}
       </main>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <BlogApplyForm />
+      </div>
       <Footer />
     </>
   );
 }
+
 
 
 
