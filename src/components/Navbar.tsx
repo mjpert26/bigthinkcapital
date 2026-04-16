@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -27,7 +27,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center group" aria-label="Big Think Capital home">
             <img
-              src="https://bigthinkcapital.com/wp-content/uploads/2024/08/Big-Think-Capital-Logo-2-300x124.png"
+              src="/logo.png"
               alt="Big Think Capital"
               className="h-10 md:h-12 w-auto transition-opacity group-hover:opacity-80"
             />
@@ -132,3 +132,4 @@ export default function Navbar() {
     </header>
   );
 }
+

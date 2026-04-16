@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 
@@ -39,7 +39,7 @@ export default function Footer() {
           <div className="col-span-2">
             <Link href="/" className="inline-block mb-5">
               <img
-                src="https://bigthinkcapital.com/wp-content/uploads/2024/08/BigThinkCapital_WHITE-400x165-1.png"
+                src="/logo.png"
                 alt="Big Think Capital"
                 className="h-14 w-auto"
               />
@@ -135,3 +135,4 @@ export default function Footer() {
     </footer>
   );
 }
+
