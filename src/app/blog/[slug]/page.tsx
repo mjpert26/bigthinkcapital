@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BlogApplyForm from "@/components/BlogApplyForm";
 import { usePosts } from "@/lib/PostsContext";
 
 function calcReadTime(html: string): number {
@@ -311,4 +312,5 @@ export default function BlogPostPage() {
     </>
   );
 }
+
 
