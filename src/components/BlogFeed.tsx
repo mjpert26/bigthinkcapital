@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { usePosts } from '@/lib/PostsContext';
@@ -109,7 +109,7 @@ export default function BlogFeed() {
             <h3 className="font-display text-xl text-slate-900 mb-1">Need funding for your business?</h3>
             <p className="text-slate-500 text-sm">See what you qualify for in under 2 minutes. No impact on your credit.</p>
           </div>
-          <a href="#apply-now" className="btn-primary shrink-0 !py-3">
+          <a href="/apply" className="btn-primary shrink-0 !py-3">
             Check Eligibility
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -118,3 +118,4 @@ export default function BlogFeed() {
     </section>
   );
 }
+

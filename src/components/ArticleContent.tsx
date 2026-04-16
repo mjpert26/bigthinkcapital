@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 export default function ArticleContent() {
   return (
@@ -54,10 +54,10 @@ export default function ArticleContent() {
               <h3 className="!mt-0 !mb-3 text-brand-900">SBA Loan Quick Facts</h3>
               <ul className="!mb-0">
                 <li>Loan amounts up to $5 million (7(a) program)</li>
-                <li>Interest rates typically 5.5%–8%</li>
+                <li>Interest rates typically 5.5%â€“8%</li>
                 <li>Repayment terms up to 25 years for real estate</li>
                 <li>Requires strong credit (680+ recommended)</li>
-                <li>Processing time: 30–90 days</li>
+                <li>Processing time: 30â€“90 days</li>
               </ul>
             </div>
             <p>
@@ -70,8 +70,8 @@ export default function ArticleContent() {
             <div className="inline-cta">
               <div className="relative z-10">
                 <h3 className="!mt-0 !mb-2 text-white text-2xl">Not sure which option is right for you?</h3>
-                <p className="!text-blue-100 !mb-5 max-w-lg">Our funding specialists can match you with the best product for your business in minutes—not days.</p>
-                <a href="#apply-now" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
+                <p className="!text-blue-100 !mb-5 max-w-lg">Our funding specialists can match you with the best product for your business in minutesâ€”not days.</p>
+                <a href="/apply" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
                   See Your Options
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
@@ -87,7 +87,7 @@ export default function ArticleContent() {
             </p>
             <p>
               With an MCA, you receive a lump sum of capital in exchange for a fixed percentage of future daily sales.
-              Repayment is automatic and adjusts with your revenue—when business is strong, you pay back faster;
+              Repayment is automatic and adjusts with your revenueâ€”when business is strong, you pay back faster;
               during slower periods, payments decrease proportionally.
             </p>
             <div className="callout-box">
@@ -122,7 +122,7 @@ export default function ArticleContent() {
               <div className="relative z-10">
                 <h3 className="!mt-0 !mb-2 text-white text-2xl">Ready to explore your options?</h3>
                 <p className="!text-blue-100 !mb-5 max-w-lg">Check your eligibility in 60 seconds. No impact on your credit score.</p>
-                <a href="#apply-now" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
+                <a href="/apply" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
                   Check Eligibility
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
@@ -138,7 +138,7 @@ export default function ArticleContent() {
             <ul>
               <li><strong>Time in business:</strong> Most products require at least 6 months, though some need 2+ years</li>
               <li><strong>Monthly revenue:</strong> $10,000+ per month for most alternative products; higher for SBA loans</li>
-              <li><strong>Business bank statements:</strong> 3–6 months of recent statements</li>
+              <li><strong>Business bank statements:</strong> 3â€“6 months of recent statements</li>
               <li><strong>Credit score:</strong> Ranges from 500+ for MCAs to 680+ for SBA loans</li>
               <li><strong>No active bankruptcies:</strong> Most lenders require no open bankruptcy proceedings</li>
             </ul>
@@ -151,10 +151,10 @@ export default function ArticleContent() {
             </p>
             <div className="grid sm:grid-cols-2 gap-4 my-8">
               {[
-                { type: 'Revenue-Based / MCA', time: '24–48 hours', color: 'bg-green-50 border-green-200 text-green-800' },
-                { type: 'Business Line of Credit', time: '2–5 days', color: 'bg-blue-50 border-blue-200 text-blue-800' },
-                { type: 'Equipment Financing', time: '3–7 days', color: 'bg-purple-50 border-purple-200 text-purple-800' },
-                { type: 'SBA Loans', time: '30–90 days', color: 'bg-amber-50 border-amber-200 text-amber-800' },
+                { type: 'Revenue-Based / MCA', time: '24â€“48 hours', color: 'bg-green-50 border-green-200 text-green-800' },
+                { type: 'Business Line of Credit', time: '2â€“5 days', color: 'bg-blue-50 border-blue-200 text-blue-800' },
+                { type: 'Equipment Financing', time: '3â€“7 days', color: 'bg-purple-50 border-purple-200 text-purple-800' },
+                { type: 'SBA Loans', time: '30â€“90 days', color: 'bg-amber-50 border-amber-200 text-amber-800' },
               ].map(item => (
                 <div key={item.type} className={`rounded-xl border p-5 ${item.color}`}>
                   <div className="text-sm font-medium opacity-70 mb-1">{item.type}</div>
@@ -182,7 +182,7 @@ export default function ArticleContent() {
               <div className="relative z-10">
                 <h3 className="!mt-0 !mb-2 text-white text-2xl">Let&apos;s find the right funding for you</h3>
                 <p className="!text-blue-100 !mb-5 max-w-lg">Tell us about your business and we&apos;ll match you with the best options. It takes less than 2 minutes.</p>
-                <a href="#apply-now" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
+                <a href="/apply" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
                   Get Funding Options
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
@@ -224,7 +224,7 @@ export default function ArticleContent() {
                 <p className="text-sm text-blue-100 mb-5 leading-relaxed">
                   See how much funding your business qualifies for. No impact to your credit score.
                 </p>
-                <a href="#apply-now" className="flex items-center justify-center gap-2 w-full py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors text-sm">
+                <a href="/apply" className="flex items-center justify-center gap-2 w-full py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors text-sm">
                   Check Eligibility
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
@@ -240,3 +240,4 @@ export default function ArticleContent() {
     </section>
   );
 }
+

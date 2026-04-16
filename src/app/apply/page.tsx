@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -132,15 +132,8 @@ export default function ApplyPage() {
       {/* Minimal top bar */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-neutral-200/50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0e2366] to-[#1d3bbb] flex items-center justify-center">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                <path d="M2 17l10 5 10-5"/>
-                <path d="M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <span className="font-display text-lg text-[#0e2366] tracking-tight">Big Think Capital</span>
+          <Link href="/" className="flex items-center group" aria-label="Big Think Capital home">
+            <img src="/logo.png" alt="Big Think Capital" className="h-10 w-auto transition-opacity group-hover:opacity-80" />
           </Link>
           <div className="flex items-center gap-6">
             <a href="tel:844-200-7201" className="hidden md:flex items-center gap-2 text-sm text-neutral-600 hover:text-[#1d3bbb] transition-colors">
@@ -560,3 +553,4 @@ export default function ApplyPage() {
     </div>
   );
 }
+
