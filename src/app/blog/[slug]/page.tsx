@@ -81,7 +81,7 @@ export default function BlogPostPage() {
             <div className="relative z-10 text-center">
               <h3 className="!mt-0 !mb-2 text-white text-2xl">Need funding for your business?</h3>
               <p className="!text-blue-100 !mb-5 max-w-md mx-auto">Check your eligibility in under 2 minutes with no impact on your credit score.</p>
-              <a href="/#lead-form" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
+              <a href="/#apply-now" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
                 Check Eligibility
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>

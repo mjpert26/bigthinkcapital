@@ -50,7 +50,7 @@ export default function Navbar() {
             <Link href="/admin" className="text-sm text-slate-500 hover:text-slate-700 transition-colors">
               Admin
             </Link>
-            <a href="#lead-form" className="btn-primary text-sm !py-2.5 !px-5">
+            <a href="#apply-now" className="btn-primary text-sm !py-2.5 !px-5">
               Check Eligibility
             </a>
           </div>
@@ -78,7 +78,7 @@ export default function Navbar() {
               <Link href="/blog" className="px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-lg" onClick={() => setMobileOpen(false)}>Blog</Link>
               <a href="#contact" className="px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-lg" onClick={() => setMobileOpen(false)}>Contact</a>
               <div className="pt-3 px-4">
-                <a href="#lead-form" className="btn-primary w-full text-sm" onClick={() => setMobileOpen(false)}>
+                <a href="#apply-now" className="btn-primary w-full text-sm" onClick={() => setMobileOpen(false)}>
                   Check Eligibility
                 </a>
               </div>

@@ -71,7 +71,7 @@ export default function ArticleContent() {
               <div className="relative z-10">
                 <h3 className="!mt-0 !mb-2 text-white text-2xl">Not sure which option is right for you?</h3>
                 <p className="!text-blue-100 !mb-5 max-w-lg">Our funding specialists can match you with the best product for your business in minutes—not days.</p>
-                <a href="#lead-form" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
+                <a href="#apply-now" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
                   See Your Options
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
@@ -122,7 +122,7 @@ export default function ArticleContent() {
               <div className="relative z-10">
                 <h3 className="!mt-0 !mb-2 text-white text-2xl">Ready to explore your options?</h3>
                 <p className="!text-blue-100 !mb-5 max-w-lg">Check your eligibility in 60 seconds. No impact on your credit score.</p>
-                <a href="#lead-form" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
+                <a href="#apply-now" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
                   Check Eligibility
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
@@ -182,7 +182,7 @@ export default function ArticleContent() {
               <div className="relative z-10">
                 <h3 className="!mt-0 !mb-2 text-white text-2xl">Let&apos;s find the right funding for you</h3>
                 <p className="!text-blue-100 !mb-5 max-w-lg">Tell us about your business and we&apos;ll match you with the best options. It takes less than 2 minutes.</p>
-                <a href="#lead-form" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
+                <a href="#apply-now" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
                   Get Funding Options
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
@@ -224,7 +224,7 @@ export default function ArticleContent() {
                 <p className="text-sm text-blue-100 mb-5 leading-relaxed">
                   See how much funding your business qualifies for. No impact to your credit score.
                 </p>
-                <a href="#lead-form" className="flex items-center justify-center gap-2 w-full py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors text-sm">
+                <a href="#apply-now" className="flex items-center justify-center gap-2 w-full py-3 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors text-sm">
                   Check Eligibility
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>

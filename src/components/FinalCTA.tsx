@@ -17,7 +17,7 @@ export default function FinalCTA() {
           Join 10,000+ business owners who&apos;ve used Big Think Capital to access the funding they need.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#lead-form" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg shadow-brand-900/30 hover:-translate-y-0.5 text-base">
+          <a href="#apply-now" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg shadow-brand-900/30 hover:-translate-y-0.5 text-base">
             Check Your Eligibility
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
