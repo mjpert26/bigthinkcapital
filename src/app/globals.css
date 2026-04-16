@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: #1a1a2e;
+    background: #fafbfe;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: #338dff30;
+    color: #132757;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-600 text-white font-medium rounded-xl
+      hover:bg-brand-700 active:bg-brand-800 transition-all duration-200 shadow-lg shadow-brand-600/20
+      hover:shadow-xl hover:shadow-brand-600/30 hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-brand-700 font-medium rounded-xl
+      border border-brand-200 hover:bg-brand-50 hover:border-brand-300 transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-slate-600 font-medium rounded-lg
+      hover:bg-slate-100 hover:text-slate-900 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-brand-500 to-brand-700;
+  }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+  }
+
+  .article-content h2 {
+    @apply text-3xl md:text-4xl font-display mt-14 mb-5 text-slate-900 scroll-mt-24;
+  }
+
+  .article-content h3 {
+    @apply text-xl md:text-2xl font-display mt-10 mb-4 text-slate-800;
+  }
+
+  .article-content p {
+    @apply text-base md:text-lg leading-relaxed text-slate-600 mb-5;
+  }
+
+  .article-content ul {
+    @apply space-y-2.5 mb-6 ml-0;
+  }
+
+  .article-content ul li {
+    @apply flex gap-3 text-slate-600 text-base md:text-lg leading-relaxed;
+  }
+
+  .article-content ul li::before {
+    content: '';
+    @apply w-1.5 h-1.5 rounded-full bg-brand-500 mt-2.5 shrink-0;
+  }
+
+  .callout-box {
+    @apply relative bg-gradient-to-br from-brand-50 to-blue-50 border border-brand-100 rounded-2xl p-6 md:p-8 my-8;
+  }
+
+  .callout-box::before {
+    content: '';
+    @apply absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-brand-500 to-brand-600 rounded-l-2xl;
+  }
+
+  .inline-cta {
+    @apply relative overflow-hidden bg-gradient-to-br from-slate-900 via-brand-950 to-slate-900 
+      rounded-2xl p-8 md:p-10 my-10 text-white;
+  }
+
+  .inline-cta::before {
+    content: '';
+    @apply absolute inset-0 opacity-30;
+    background: radial-gradient(ellipse at 30% 50%, rgba(51, 141, 255, 0.4), transparent 60%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}
+
+/* Admin styles */
+.admin-sidebar {
+  @apply bg-slate-925 text-white;
+}
+
+.admin-nav-item {
+  @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium text-slate-400
+    hover:text-white hover:bg-white/5 transition-all duration-150 cursor-pointer;
+}
+
+.admin-nav-item.active {
+  @apply text-white bg-brand-600/20 text-brand-300;
+}
+
+/* Rich text editor styling */
+.prose-editor {
+  @apply min-h-[400px] w-full rounded-xl border border-slate-200 bg-white p-6 text-base text-slate-700
+    leading-relaxed focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400
+    placeholder:text-slate-300 resize-y;
+  font-family: var(--font-body);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Noise overlay */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
