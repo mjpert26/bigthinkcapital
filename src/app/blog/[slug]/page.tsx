@@ -158,31 +158,12 @@ export default function BlogPostPage() {
 
         {/* Article body + sidebar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[minmax(0,1fr)_320px] gap-12 lg:gap-16">
+          <div className="flex justify-center">
             {/* Body */}
             <div className="max-w-3xl mx-auto lg:mx-0 w-full">
               <article className="article-content" dangerouslySetInnerHTML={{ __html: post.body }} />
 
-              {/* Inline CTA */}
-              <div className="inline-cta my-16">
-                <div className="relative z-10 text-center">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#f59e0b]/20 text-[#fbbf24] text-xs font-semibold rounded-full uppercase tracking-wider mb-4">
-                    <span className="w-1.5 h-1.5 bg-[#fbbf24] rounded-full animate-pulse"></span>
-                    Limited Time
-                  </div>
-                  <h3 className="font-display text-3xl md:text-4xl text-white mb-3">Need funding for your business?</h3>
-                  <p className="text-blue-100 mb-6 max-w-md mx-auto leading-relaxed">Check your eligibility in under 2 minutes. No impact on your credit score.</p>
-                  <a href="/apply" className="inline-flex items-center gap-2 px-8 py-4 bg-[#f59e0b] hover:bg-[#fbbf24] text-[#0e2366] font-bold rounded-xl transition-all transform hover:-translate-y-0.5 shadow-lg shadow-[#f59e0b]/30">
-                    Check Eligibility
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </a>
-                  <div className="mt-5 flex items-center justify-center gap-4 text-xs text-blue-200">
-                    <span className="flex items-center gap-1"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>No credit impact</span>
-                    <span className="flex items-center gap-1"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>2-minute form</span>
-                    <span className="flex items-center gap-1"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>Expert guidance</span>
-                  </div>
-                </div>
-              </div>
+              
 
               {/* Author bio card */}
               <div className="mt-12 p-6 bg-neutral-50 border border-neutral-200 rounded-2xl flex items-start gap-4">
@@ -198,72 +179,7 @@ export default function BlogPostPage() {
               </div>
             </div>
 
-            {/* Sticky sidebar */}
-            <aside className="hidden lg:block">
-              <div className="sticky top-28 space-y-6">
-                {/* Apply CTA */}
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0e2366] to-[#1d3bbb] p-6 text-white shadow-xl shadow-[#0e2366]/20">
-                  <div className="absolute -top-12 -right-12 w-32 h-32 bg-[#f59e0b]/20 rounded-full blur-2xl"></div>
-                  <div className="relative z-10">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-[#fbbf24] mb-2">Get Funded Fast</div>
-                    <h4 className="font-display text-2xl mb-3 leading-tight">See how much you qualify for</h4>
-                    <p className="text-sm text-blue-100 mb-5 leading-relaxed">Check your eligibility in 2 minutes. No impact to your credit score.</p>
-                    <a href="/apply" className="flex items-center justify-center gap-2 w-full py-3 bg-[#f59e0b] hover:bg-[#fbbf24] text-[#0e2366] font-bold rounded-xl transition-all text-sm">
-                      Check Eligibility
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                    <div className="mt-4 flex items-center gap-2 text-xs text-blue-200">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                      256-bit SSL encryption
-                    </div>
-                  </div>
-                </div>
-
-                {/* Trust signals */}
-                <div className="bg-white border border-neutral-200 rounded-2xl p-6">
-                  <div className="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">Trusted by 25,000+ businesses</div>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-[#0e2366]/10 flex items-center justify-center text-[#0e2366]">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold text-[#0e2366]">$1B+ Funded</div>
-                        <div className="text-xs text-neutral-500">Across all funding types</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-[#0e2366]/10 flex items-center justify-center text-[#0e2366]">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold text-[#0e2366]">25,000+ Businesses</div>
-                        <div className="text-xs text-neutral-500">Funded & growing</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-[#0e2366]/10 flex items-center justify-center text-[#0e2366]">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold text-[#0e2366]">24hr Funding</div>
-                        <div className="text-xs text-neutral-500">On select products</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Need help */}
-                <div className="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 text-center">
-                  <div className="text-sm font-semibold text-[#0e2366] mb-1">Prefer to talk?</div>
-                  <p className="text-xs text-neutral-500 mb-3">Speak with a funding expert now</p>
-                  <a href="tel:844-200-7201" className="inline-flex items-center gap-2 text-lg font-bold text-[#1d3bbb] hover:text-[#f59e0b] transition-colors">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                    844-200-7201
-                  </a>
-                </div>
-              </div>
-            </aside>
+            
           </div>
         </div>
 
@@ -312,5 +228,6 @@ export default function BlogPostPage() {
     </>
   );
 }
+
 
 
