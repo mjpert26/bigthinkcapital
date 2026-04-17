@@ -21,7 +21,6 @@ const COMPARISON_FEATURES = [
 export default function ApplyNow() {
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden" id="apply-now">
-      {/* SilkWaves background */}
       <div className="absolute inset-0">
         <SilkWaves
           speed={0.8}
@@ -37,12 +36,10 @@ export default function ApplyNow() {
         />
       </div>
 
-      {/* Dark overlay for contrast */}
       <div className="absolute inset-0 bg-slate-950/60" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Left: Copy + CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +57,7 @@ export default function ApplyNow() {
               Traditional banks reject 80% of small business loan applications. We built a better way &mdash; faster, more flexible, and designed for real businesses.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="mb-12">
               <Link
                 href="/apply"
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#f59e0b] hover:bg-[#fbbf24] text-[#0e2366] font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-[#f59e0b]/30 hover:shadow-[#f59e0b]/50"
@@ -70,18 +67,8 @@ export default function ApplyNow() {
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </Link>
-              <a
-                href="tel:844-200-7201"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl transition-all"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                </svg>
-                Talk to Expert
-              </a>
             </div>
 
-            {/* Stats row */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
               {[
                 { val: "$1B+", label: "Funded" },
@@ -96,7 +83,6 @@ export default function ApplyNow() {
             </div>
           </motion.div>
 
-          {/* Right: Comparison table */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -104,7 +90,6 @@ export default function ApplyNow() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white/95 backdrop-blur-xl rounded-3xl p-6 md:p-8 shadow-2xl shadow-black/40 border border-white/20"
           >
-            {/* Header row */}
             <div className="grid grid-cols-[1fr_100px_100px] md:grid-cols-[1fr_120px_120px] gap-2 pb-4 mb-4 border-b border-neutral-200">
               <div className="text-xs font-semibold uppercase tracking-wider text-neutral-500">Feature</div>
               <motion.div
@@ -133,7 +118,6 @@ export default function ApplyNow() {
               </motion.div>
             </div>
 
-            {/* Rows */}
             <div className="space-y-1">
               {COMPARISON_FEATURES.map((feature, index) => (
                 <motion.div
@@ -171,7 +155,6 @@ export default function ApplyNow() {
               ))}
             </div>
 
-            {/* Footer CTA */}
             <div className="mt-6 pt-6 border-t border-neutral-200">
               <Link
                 href="/apply"

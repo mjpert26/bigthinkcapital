@@ -5,67 +5,21 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-[#0e2366] text-white relative overflow-hidden" id="contact">
-      {/* Background accents */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#1d3bbb]/30 blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-[#f59e0b]/10 blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-        {/* Top CTA strip */}
-        <div className="mb-14 pb-14 border-b border-white/10">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div>
-              <h3 className="font-display text-3xl md:text-4xl text-white mb-2 tracking-tight">
-                Ready to fund your next chapter?
-              </h3>
-              <p className="text-blue-100/70">See how much your business qualifies for in under 2 minutes.</p>
-            </div>
-            <Link
-              href="/apply"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#f59e0b] hover:bg-[#fbbf24] text-[#0e2366] font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-[#f59e0b]/30 whitespace-nowrap"
-            >
-              Check Eligibility
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </Link>
-          </div>
-        </div>
-
-        {/* Main grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
-          {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="inline-block mb-5">
-              <img
-                src="https://bigthinkcapital.com/wp-content/uploads/2024/08/BigThinkCapital_WHITE-400x165-1.png"
-                alt="Big Think Capital"
-                className="h-14 w-auto"
-              />
+              <img src="/logo.png" alt="Big Think Capital" className="h-14 w-auto" />
             </Link>
             <p className="text-sm text-blue-100/70 leading-relaxed max-w-sm mb-6">
               Big Think Capital is a leading financial marketplace helping business owners access the capital they need. Over $1 billion funded to 25,000+ businesses.
             </p>
 
-            {/* Contact */}
-            <div className="space-y-2">
-              <a href="tel:844-200-7201" className="flex items-center gap-2 text-sm text-blue-100 hover:text-[#fbbf24] transition-colors">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                </svg>
-                844-200-7201
-              </a>
-              <a href="mailto:info@bigthinkcapital.com" className="flex items-center gap-2 text-sm text-blue-100 hover:text-[#fbbf24] transition-colors">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-                info@bigthinkcapital.com
-              </a>
-            </div>
-
-            {/* Social */}
             <div className="flex items-center gap-3 mt-5">
               <a href="https://www.linkedin.com/company/bigthinkcapital.com/" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#f59e0b] hover:text-[#0e2366] flex items-center justify-center transition-all">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -82,7 +36,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Funding Solutions */}
           <div>
             <h4 className="text-xs font-semibold text-[#fbbf24] uppercase tracking-wider mb-4">Funding</h4>
             <ul className="space-y-2.5">
@@ -95,7 +48,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Resources */}
           <div>
             <h4 className="text-xs font-semibold text-[#fbbf24] uppercase tracking-wider mb-4">Resources</h4>
             <ul className="space-y-2.5">
@@ -107,7 +59,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
           <div>
             <h4 className="text-xs font-semibold text-[#fbbf24] uppercase tracking-wider mb-4">Company</h4>
             <ul className="space-y-2.5">
@@ -120,7 +71,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="mt-14 pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <p className="text-xs text-blue-100/50 max-w-3xl leading-relaxed">
             &copy; {new Date().getFullYear()} Big Think Capital. All rights reserved. Big Think Capital is a lending marketplace. Funding products are offered through our network of lending partners. Referral bonuses are not allowed in California.

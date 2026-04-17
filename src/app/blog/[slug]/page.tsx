@@ -14,6 +14,64 @@ function calcReadTime(html: string): number {
   return Math.max(1, Math.round(words / 225));
 }
 
+// Sidebar card component - scrolls down to the form, NEVER off-site
+function EligibilityCard({ onCtaClick }: { onCtaClick: (e: React.MouseEvent<HTMLAnchorElement>) => void }) {
+  return (
+    <div className="group relative">
+      <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-[#f59e0b]/30 via-[#1d3bbb]/20 to-[#0e2366]/30 blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div>
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0e2366] via-[#1a3296] to-[#0e2366] p-8 shadow-2xl shadow-[#0e2366]/40 transition-transform duration-500 group-hover:-translate-y-1">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "20px 20px" }}></div>
+        <div className="absolute -top-20 -right-20 w-48 h-48 bg-[#f59e0b]/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-24 -left-12 w-40 h-40 bg-[#3a68f5]/30 rounded-full blur-3xl"></div>
+        <div className="relative z-10">
+          <div className="flex items-center gap-2 mb-5">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#fbbf24] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#fbbf24]"></span>
+            </span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#fbbf24]">Pre-qualify in 2 minutes</span>
+          </div>
+          <h3 className="font-display text-3xl text-white leading-[1.05] mb-4 tracking-tight">See how much you<br/>qualify for.</h3>
+          <div className="h-0.5 w-12 bg-[#f59e0b] rounded-full mb-5"></div>
+          <p className="text-sm text-blue-100/80 leading-relaxed mb-7">No hard credit pull. No obligation. Just real funding offers from a marketplace of trusted lenders.</p>
+          <div className="grid grid-cols-3 gap-3 mb-7 pb-7 border-b border-white/10">
+            <div>
+              <div className="font-display text-xl text-white leading-none mb-1">$1B+</div>
+              <div className="text-[10px] uppercase tracking-wider text-blue-200/60">Funded</div>
+            </div>
+            <div>
+              <div className="font-display text-xl text-white leading-none mb-1">25K+</div>
+              <div className="text-[10px] uppercase tracking-wider text-blue-200/60">Customers</div>
+            </div>
+            <div>
+              <div className="font-display text-xl text-white leading-none mb-1">24<span className="text-sm">hr</span></div>
+              <div className="text-[10px] uppercase tracking-wider text-blue-200/60">Funding</div>
+            </div>
+          </div>
+          <a
+            href="#blog-apply-now"
+            onClick={onCtaClick}
+            className="group/btn relative flex items-center justify-center gap-2 w-full py-4 bg-[#f59e0b] hover:bg-[#fbbf24] text-[#0e2366] font-bold text-sm rounded-xl transition-all duration-200 shadow-lg shadow-[#f59e0b]/40 hover:shadow-[#f59e0b]/60 overflow-hidden"
+          >
+            <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700"></div>
+            <span className="relative">Check Eligibility</span>
+            <svg className="relative group-hover/btn:translate-y-0.5 transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 5v14M19 12l-7 7-7-7" />
+            </svg>
+          </a>
+          <div className="flex items-center justify-center gap-1.5 mt-4">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-200/50">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0110 0v4" />
+            </svg>
+            <span className="text-[10px] text-blue-200/50 uppercase tracking-wider">Soft pull only &middot; SSL secured</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function BlogPostPage() {
   const params = useParams();
   const slug = params.slug as string;
@@ -40,9 +98,7 @@ export default function BlogPostPage() {
   const scrollToForm = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const el = document.getElementById("blog-apply-now");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   if (!post) {
@@ -62,10 +118,7 @@ export default function BlogPostPage() {
   }
 
   const readTime = calcReadTime(post.body);
-  const publishedDate = new Date(post.publish_date).toLocaleDateString("en-US", {
-    month: "long", day: "numeric", year: "numeric",
-  });
-
+  const publishedDate = new Date(post.publish_date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
   const authorInitials = (post.author || "BTC").split(" ").map((n) => n[0]).slice(0, 2).join("");
 
   return (
@@ -74,20 +127,16 @@ export default function BlogPostPage() {
 
       {/* Reading progress bar */}
       <div className="fixed top-0 left-0 right-0 h-1 z-40 bg-neutral-100">
-        <div
-          className="h-full bg-gradient-to-r from-[#0e2366] via-[#1d3bbb] to-[#f59e0b] transition-all duration-150"
-          style={{ width: progress + "%" }}
-        />
+        <div className="h-full bg-gradient-to-r from-[#0e2366] via-[#1d3bbb] to-[#f59e0b] transition-all duration-150" style={{ width: progress + "%" }} />
       </div>
 
       <main className="pt-24 md:pt-32 pb-20 bg-white">
-        {/* Header */}
+        {/* HEADER */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
           <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm text-neutral-500 hover:text-[#1d3bbb] transition-colors mb-6">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             All Articles
           </Link>
-
           <div className="flex flex-wrap items-center gap-2 mb-5">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#f59e0b]/10 text-[#92400e] text-xs font-semibold rounded-full uppercase tracking-wider">
               <span className="w-1.5 h-1.5 bg-[#f59e0b] rounded-full"></span>
@@ -97,31 +146,18 @@ export default function BlogPostPage() {
               <span key={tag} className="px-3 py-1 bg-neutral-100 text-neutral-600 text-xs rounded-full">{tag}</span>
             ))}
           </div>
-
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-[#0e2366] leading-[1.05] mb-6 tracking-tight">
-            {post.title}
-          </h1>
-
-          {post.excerpt && (
-            <p className="text-xl text-neutral-600 leading-relaxed mb-8 max-w-3xl">{post.excerpt}</p>
-          )}
-
-          {/* Author row */}
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-[#0e2366] leading-[1.05] mb-6 tracking-tight">{post.title}</h1>
+          {post.excerpt && (<p className="text-xl text-neutral-600 leading-relaxed mb-8 max-w-3xl">{post.excerpt}</p>)}
           <div className="flex items-center justify-between flex-wrap gap-4 pb-6 border-b border-neutral-200">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#0e2366] to-[#1d3bbb] flex items-center justify-center text-white font-semibold text-sm">
-                {authorInitials}
-              </div>
+              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#0e2366] to-[#1d3bbb] flex items-center justify-center text-white font-semibold text-sm">{authorInitials}</div>
               <div>
                 <div className="text-sm font-semibold text-[#0e2366]">{post.author || "Big Think Capital Team"}</div>
                 <div className="text-xs text-neutral-500 flex items-center gap-2">
-                  <span>{publishedDate}</span>
-                  <span>&middot;</span>
-                  <span>{readTime} min read</span>
+                  <span>{publishedDate}</span><span>&middot;</span><span>{readTime} min read</span>
                 </div>
               </div>
             </div>
-
             <div className="flex items-center gap-2">
               <span className="text-xs text-neutral-500 mr-1">Share:</span>
               <a href={"https://twitter.com/intent/tweet?url=" + encodeURIComponent(shareUrl) + "&text=" + encodeURIComponent(post.title)} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-neutral-200 hover:border-[#1d3bbb] hover:bg-[#1d3bbb] hover:text-white flex items-center justify-center text-neutral-600 transition-all" aria-label="Share on Twitter">
@@ -137,7 +173,7 @@ export default function BlogPostPage() {
           </div>
         </div>
 
-        {/* Featured image */}
+        {/* FEATURED IMAGE */}
         {post.featured_image && (
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-14">
             <div className="rounded-2xl overflow-hidden bg-neutral-100 aspect-[2/1] shadow-2xl shadow-[#0e2366]/10">
@@ -146,56 +182,36 @@ export default function BlogPostPage() {
           </div>
         )}
 
-        {/* Article body */}
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <article className="article-content" dangerouslySetInnerHTML={{ __html: post.body }} />
-
-          {/* Author bio card */}
-          <div className="mt-12 p-6 bg-neutral-50 border border-neutral-200 rounded-2xl flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0e2366] to-[#1d3bbb] flex items-center justify-center text-white font-semibold flex-shrink-0">
-              {authorInitials}
-            </div>
-            <div>
-              <div className="text-sm font-semibold text-[#0e2366] mb-1">{post.author || "Big Think Capital Team"}</div>
-              <p className="text-sm text-neutral-600 leading-relaxed">
-                Big Think Capital has funded over $1 billion to more than 25,000 small business owners. Our experts help companies find the right financing for every stage of growth.
-              </p>
-            </div>
-          </div>
-
-          {/* NEW: Compact eligibility card — links to form below */}
-          <div className="mt-10 relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0e2366] via-[#1d3bbb] to-[#0e2366] p-6 md:p-8 shadow-xl shadow-[#0e2366]/20">
-            <div className="absolute -top-12 -right-12 w-40 h-40 bg-[#f59e0b]/15 rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-[#3a68f5]/20 rounded-full blur-2xl"></div>
-            <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
-              <div>
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#fbbf24]/15 border border-[#fbbf24]/30 mb-3">
-                  <span className="w-1.5 h-1.5 bg-[#fbbf24] rounded-full animate-pulse"></span>
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#fbbf24]">Pre-qualify Today</span>
+        {/* BODY + STICKY SIDEBAR (desktop) / inline card (mobile) */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-14">
+            <div className="max-w-3xl mx-auto lg:mx-0 w-full">
+              <article className="article-content" dangerouslySetInnerHTML={{ __html: post.body }} />
+              <div className="mt-12 p-6 bg-neutral-50 border border-neutral-200 rounded-2xl flex items-start gap-4">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0e2366] to-[#1d3bbb] flex items-center justify-center text-white font-semibold flex-shrink-0">{authorInitials}</div>
+                <div>
+                  <div className="text-sm font-semibold text-[#0e2366] mb-1">{post.author || "Big Think Capital Team"}</div>
+                  <p className="text-sm text-neutral-600 leading-relaxed">Big Think Capital has funded over $1 billion to more than 25,000 small business owners. Our experts help companies find the right financing for every stage of growth.</p>
                 </div>
-                <h3 className="font-display text-2xl md:text-3xl text-white mb-2 leading-tight">Check your eligibility here</h3>
-                <p className="text-sm text-blue-100/80 max-w-md">See how much your business qualifies for. Takes under 2 minutes &mdash; no impact on your credit.</p>
               </div>
-              <a
-                href="#blog-apply-now"
-                onClick={scrollToForm}
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#f59e0b] hover:bg-[#fbbf24] text-[#0e2366] font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-[#f59e0b]/30 hover:shadow-[#f59e0b]/50 whitespace-nowrap"
-              >
-                Check Eligibility
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-y-1 transition-transform">
-                  <path d="M12 5v14M19 12l-7 7-7-7"/>
-                </svg>
-              </a>
+              <div className="lg:hidden mt-12">
+                <EligibilityCard onCtaClick={scrollToForm} />
+              </div>
             </div>
+            <aside className="hidden lg:block">
+              <div className="sticky top-32">
+                <EligibilityCard onCtaClick={scrollToForm} />
+              </div>
+            </aside>
           </div>
         </div>
 
-        {/* Silk-wave apply form (now above related posts) */}
+        {/* SILK-WAVE FORM — the actual conversion target */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
           <BlogApplyForm />
         </div>
 
-        {/* Related posts (now at the very bottom) */}
+        {/* RELATED POSTS */}
         {relatedPosts.length > 0 && (
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 pt-16 border-t border-neutral-200">
             <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
@@ -220,9 +236,7 @@ export default function BlogPostPage() {
                     </div>
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
-                    <div className="text-xs text-neutral-500 mb-2">
-                      {new Date(rp.publish_date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
-                    </div>
+                    <div className="text-xs text-neutral-500 mb-2">{new Date(rp.publish_date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</div>
                     <h3 className="font-display text-xl text-[#0e2366] group-hover:text-[#1d3bbb] transition-colors leading-snug mb-2">{rp.title}</h3>
                     {rp.excerpt && <p className="text-sm text-neutral-600 line-clamp-2 leading-relaxed">{rp.excerpt}</p>}
                     <div className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#1d3bbb] group-hover:text-[#f59e0b] transition-colors">
