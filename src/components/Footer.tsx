@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 
@@ -12,13 +12,34 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+        {/* Top CTA strip */}
+        <div className="mb-14 pb-14 border-b border-white/10">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <h3 className="font-display text-3xl md:text-4xl text-white mb-2 tracking-tight">
+                Ready to fund your next chapter?
+              </h3>
+              <p className="text-blue-100/70">See how much your business qualifies for in under 2 minutes.</p>
+            </div>
+            <Link
+              href="/apply"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#f59e0b] hover:bg-[#fbbf24] text-[#0e2366] font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-[#f59e0b]/30 whitespace-nowrap"
+            >
+              Check Eligibility
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </Link>
+          </div>
+        </div>
+
         {/* Main grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="inline-block mb-5">
               <img
-                src="/logo.png"
+                src="https://bigthinkcapital.com/wp-content/uploads/2024/08/BigThinkCapital_WHITE-400x165-1.png"
                 alt="Big Think Capital"
                 className="h-14 w-auto"
               />
