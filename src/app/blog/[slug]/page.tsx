@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
@@ -67,6 +67,34 @@ export default function BlogPostPage() {
   });
 
   const authorInitials = (post.author || "BTC").split(" ").map((n) => n[0]).slice(0, 2).join("");
+
+  // Reusable: the compact eligibility card
+  const EligibilityCard = (
+    <div className="max-w-md mx-auto relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0e2366] via-[#1d3bbb] to-[#0e2366] p-6 md:p-8 shadow-xl shadow-[#0e2366]/20">
+      <div className="absolute -top-12 -right-12 w-40 h-40 bg-[#f59e0b]/15 rounded-full blur-2xl"></div>
+      <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-[#3a68f5]/20 rounded-full blur-2xl"></div>
+      <div className="relative z-10 flex flex-col gap-5">
+        <div>
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#fbbf24]/15 border border-[#fbbf24]/30 mb-3">
+            <span className="w-1.5 h-1.5 bg-[#fbbf24] rounded-full animate-pulse"></span>
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#fbbf24]">Pre-qualify Today</span>
+          </div>
+          <h3 className="font-display text-2xl md:text-3xl text-white mb-2 leading-tight">Check your eligibility here</h3>
+          <p className="text-sm text-blue-100/80">See how much your business qualifies for. Takes under 2 minutes &mdash; no impact on your credit.</p>
+        </div>
+        <a
+          href="#blog-apply-now"
+          onClick={scrollToForm}
+          className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#f59e0b] hover:bg-[#fbbf24] text-[#0e2366] font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-[#f59e0b]/30 hover:shadow-[#f59e0b]/50 whitespace-nowrap"
+        >
+          Check Eligibility
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-y-1 transition-transform">
+            <path d="M12 5v14M19 12l-7 7-7-7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -137,32 +165,11 @@ export default function BlogPostPage() {
           </div>
         </div>
 
-          {/* NEW: Compact eligibility card â€” links to form below */}
-          <div className="max-w-md mx-auto relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0e2366] via-[#1d3bbb] to-[#0e2366] p-6 md:p-8 shadow-xl shadow-[#0e2366]/20">
-            <div className="absolute -top-12 -right-12 w-40 h-40 bg-[#f59e0b]/15 rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-[#3a68f5]/20 rounded-full blur-2xl"></div>
-            <div className="relative z-10 flex flex-col gap-5">
-              <div>
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#fbbf24]/15 border border-[#fbbf24]/30 mb-3">
-                  <span className="w-1.5 h-1.5 bg-[#fbbf24] rounded-full animate-pulse"></span>
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#fbbf24]">Pre-qualify Today</span>
-                </div>
-                <h3 className="font-display text-2xl md:text-3xl text-white mb-2 leading-tight">Check your eligibility here</h3>
-                <p className="text-sm text-blue-100/80 max-w-md">See how much your business qualifies for. Takes under 2 minutes &mdash; no impact on your credit.</p>
-              </div>
-              <a
-                href="#blog-apply-now"
-                onClick={scrollToForm}
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#f59e0b] hover:bg-[#fbbf24] text-[#0e2366] font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-[#f59e0b]/30 hover:shadow-[#f59e0b]/50 whitespace-nowrap"
-              >
-                Check Eligibility
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-y-1 transition-transform">
-                  <path d="M12 5v14M19 12l-7 7-7-7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
+        {/* Eligibility card — top of article, right after header */}
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          {EligibilityCard}
         </div>
+
         {/* Featured image */}
         {post.featured_image && (
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-14">
@@ -188,14 +195,14 @@ export default function BlogPostPage() {
               </p>
             </div>
           </div>
+        </div>
 
-
-        {/* Silk-wave apply form (now above related posts) */}
+        {/* Silk-wave apply form */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
           <BlogApplyForm />
         </div>
 
-        {/* Related posts (now at the very bottom) */}
+        {/* Related posts */}
         {relatedPosts.length > 0 && (
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 pt-16 border-t border-neutral-200">
             <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
@@ -240,5 +247,3 @@ export default function BlogPostPage() {
     </>
   );
 }
-
-
