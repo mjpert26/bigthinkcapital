@@ -137,32 +137,6 @@ export default function BlogPostPage() {
           </div>
         </div>
 
-        {/* Featured image */}
-        {post.featured_image && (
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-14">
-            <div className="rounded-2xl overflow-hidden bg-neutral-100 aspect-[2/1] shadow-2xl shadow-[#0e2366]/10">
-              <img src={post.featured_image} alt={post.title} className="w-full h-full object-cover" />
-            </div>
-          </div>
-        )}
-
-        {/* Article body */}
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <article className="article-content" dangerouslySetInnerHTML={{ __html: post.body }} />
-
-          {/* Author bio card */}
-          <div className="mt-12 p-6 bg-neutral-50 border border-neutral-200 rounded-2xl flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0e2366] to-[#1d3bbb] flex items-center justify-center text-white font-semibold flex-shrink-0">
-              {authorInitials}
-            </div>
-            <div>
-              <div className="text-sm font-semibold text-[#0e2366] mb-1">{post.author || "Big Think Capital Team"}</div>
-              <p className="text-sm text-neutral-600 leading-relaxed">
-                Big Think Capital has funded over $1 billion to more than 25,000 small business owners. Our experts help companies find the right financing for every stage of growth.
-              </p>
-            </div>
-          </div>
-
           {/* NEW: Compact eligibility card â€” links to form below */}
           <div className="max-w-md mx-auto relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0e2366] via-[#1d3bbb] to-[#0e2366] p-6 md:p-8 shadow-xl shadow-[#0e2366]/20">
             <div className="absolute -top-12 -right-12 w-40 h-40 bg-[#f59e0b]/15 rounded-full blur-2xl"></div>
@@ -189,6 +163,32 @@ export default function BlogPostPage() {
             </div>
           </div>
         </div>
+        {/* Featured image */}
+        {post.featured_image && (
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-14">
+            <div className="rounded-2xl overflow-hidden bg-neutral-100 aspect-[2/1] shadow-2xl shadow-[#0e2366]/10">
+              <img src={post.featured_image} alt={post.title} className="w-full h-full object-cover" />
+            </div>
+          </div>
+        )}
+
+        {/* Article body */}
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <article className="article-content" dangerouslySetInnerHTML={{ __html: post.body }} />
+
+          {/* Author bio card */}
+          <div className="mt-12 p-6 bg-neutral-50 border border-neutral-200 rounded-2xl flex items-start gap-4">
+            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0e2366] to-[#1d3bbb] flex items-center justify-center text-white font-semibold flex-shrink-0">
+              {authorInitials}
+            </div>
+            <div>
+              <div className="text-sm font-semibold text-[#0e2366] mb-1">{post.author || "Big Think Capital Team"}</div>
+              <p className="text-sm text-neutral-600 leading-relaxed">
+                Big Think Capital has funded over $1 billion to more than 25,000 small business owners. Our experts help companies find the right financing for every stage of growth.
+              </p>
+            </div>
+          </div>
+
 
         {/* Silk-wave apply form (now above related posts) */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
