@@ -164,7 +164,7 @@ export default function BlogPostPage() {
           </div>
 
           {/* NEW: Compact eligibility card â€” links to form below */}
-          <div className="mt-10 relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0e2366] via-[#1d3bbb] to-[#0e2366] p-6 md:p-8 shadow-xl shadow-[#0e2366]/20">
+          <div className="max-w-md mx-auto relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0e2366] via-[#1d3bbb] to-[#0e2366] p-6 md:p-8 shadow-xl shadow-[#0e2366]/20">
             <div className="absolute -top-12 -right-12 w-40 h-40 bg-[#f59e0b]/15 rounded-full blur-2xl"></div>
             <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-[#3a68f5]/20 rounded-full blur-2xl"></div>
             <div className="relative z-10 flex flex-col gap-5">
@@ -240,4 +240,5 @@ export default function BlogPostPage() {
     </>
   );
 }
+
 
