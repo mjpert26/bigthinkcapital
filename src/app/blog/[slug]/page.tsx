@@ -18,11 +18,8 @@ function calcReadTime(html: string): number {
 function EligibilityCard({ onCtaClick }: { onCtaClick: (e: React.MouseEvent<HTMLAnchorElement>) => void }) {
   return (
     <div className="group relative">
-      <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-[#f59e0b]/30 via-[#1d3bbb]/20 to-[#0e2366]/30 blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div>
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0e2366] via-[#1a3296] to-[#0e2366] p-8 shadow-2xl shadow-[#0e2366]/40 transition-transform duration-500 group-hover:-translate-y-1">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0e2366] via-[#1a3296] to-[#0e2366] p-8 shadow-xl shadow-[#0e2366]/30 transition-transform duration-500 group-hover:-translate-y-1">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "20px 20px" }}></div>
-        <div className="absolute -top-20 -right-20 w-48 h-48 bg-[#f59e0b]/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-24 -left-12 w-40 h-40 bg-[#3a68f5]/30 rounded-full blur-3xl"></div>
         <div className="relative z-10">
           <div className="flex items-center gap-2 mb-5">
             <span className="relative flex h-2 w-2">

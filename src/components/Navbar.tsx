@@ -38,11 +38,12 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-center group" aria-label="Big Think Capital home">
+          <a href="https://bigthinkcapital.com" className="flex items-center group" aria-label="Big Think Capital home">
             <img src="/logo.png" alt="Big Think Capital" className="h-10 md:h-12 w-auto transition-opacity group-hover:opacity-80" />
-          </Link>
+          </a>
 
           <div className="hidden lg:flex items-center gap-8">
+            <a href="https://bigthinkcapital.com" className="text-sm font-medium text-neutral-700 hover:text-[#1d3bbb] transition-colors">Home</a>
             <Link href="/blog" className="text-sm font-medium text-neutral-700 hover:text-[#1d3bbb] transition-colors">Articles</Link>
             <a href="https://bigthinkcapital.com/funding-solutions/" className="text-sm font-medium text-neutral-700 hover:text-[#1d3bbb] transition-colors">Funding Solutions</a>
             <a href="https://bigthinkcapital.com/knowledge-center/" className="text-sm font-medium text-neutral-700 hover:text-[#1d3bbb] transition-colors">Knowledge Center</a>
@@ -79,6 +80,7 @@ export default function Navbar() {
         {mobileOpen && (
           <div className="lg:hidden pb-6 pt-2 animate-fade-in border-t border-neutral-100 mt-2">
             <div className="flex flex-col gap-1 pt-4">
+              <a href="https://bigthinkcapital.com" className="px-4 py-3 text-neutral-700 hover:bg-neutral-50 rounded-lg font-medium">Home</a>
               <Link href="/blog" className="px-4 py-3 text-neutral-700 hover:bg-neutral-50 rounded-lg font-medium" onClick={() => setMobileOpen(false)}>Articles</Link>
               <a href="https://bigthinkcapital.com/funding-solutions/" className="px-4 py-3 text-neutral-700 hover:bg-neutral-50 rounded-lg font-medium">Funding Solutions</a>
               <a href="https://bigthinkcapital.com/knowledge-center/" className="px-4 py-3 text-neutral-700 hover:bg-neutral-50 rounded-lg font-medium">Knowledge Center</a>
