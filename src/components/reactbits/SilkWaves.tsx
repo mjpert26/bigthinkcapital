@@ -141,10 +141,36 @@ const SilkWaves: React.FC<SilkWavesProps> = ({
     scene.add(mesh);
 
     const clock = new THREE.Clock();
+    let isVisible = true;
+    let isPageVisible = true;
+
+    // Pause shader when canvas is offscreen — frees GPU for scroll repaints
+    const intersectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && isPageVisible) {
+          clock.start(); // resume clock without time jump
+        } else {
+          clock.stop();
+        }
+      },
+      { threshold: 0 }
+    );
+    intersectionObserver.observe(container);
+
+    // Also pause when the browser tab is hidden
+    const onVisibilityChange = () => {
+      isPageVisible = !document.hidden;
+      if (isVisible && isPageVisible) clock.start();
+      else clock.stop();
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
     const animate = () => {
+      animationFrameRef.current = requestAnimationFrame(animate);
+      if (!isVisible || !isPageVisible) return; // skip render — biggest win
       material.uniforms.uTime.value = clock.getElapsedTime();
       renderer.render(scene, camera);
-      animationFrameRef.current = requestAnimationFrame(animate);
     };
     animate();
 
@@ -159,6 +185,8 @@ const SilkWaves: React.FC<SilkWavesProps> = ({
 
     return () => {
       if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current);
+      intersectionObserver.disconnect();
+      document.removeEventListener("visibilitychange", onVisibilityChange);
       resizeObserver.disconnect();
       renderer.dispose();
       geometry.dispose();
