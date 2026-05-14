@@ -13,7 +13,15 @@ export default function Navbar() {
   const isBlogPage = pathname?.startsWith("/blog");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 20);
+        ticking = false;
+      });
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -21,11 +29,12 @@ export default function Navbar() {
   return (
     <header
       className={
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 " +
+        "fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 transform-gpu " +
         (scrolled
-          ? "bg-white/90 backdrop-blur-xl shadow-sm shadow-neutral-200/50 border-b border-neutral-100"
-          : "bg-white/70 backdrop-blur-md")
+          ? "bg-white shadow-sm shadow-neutral-200/50 border-b border-neutral-100"
+          : "bg-white border-b border-transparent")
       }
+      style={{ willChange: "transform" }}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">

@@ -84,11 +84,17 @@ export default function BlogPostPage() {
 
   useEffect(() => {
     setShareUrl(window.location.href);
+    let ticking = false;
     const onScroll = () => {
-      const h = document.documentElement;
-      const total = h.scrollHeight - h.clientHeight;
-      const pct = total > 0 ? (h.scrollTop / total) * 100 : 0;
-      setProgress(pct);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const h = document.documentElement;
+        const total = h.scrollHeight - h.clientHeight;
+        const pct = total > 0 ? (h.scrollTop / total) * 100 : 0;
+        setProgress(pct);
+        ticking = false;
+      });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
@@ -127,7 +133,10 @@ export default function BlogPostPage() {
 
       {/* Reading progress bar */}
       <div className="fixed top-0 left-0 right-0 h-1 z-40 bg-neutral-100">
-        <div className="h-full bg-gradient-to-r from-[#0e2366] via-[#1d3bbb] to-[#f59e0b] transition-all duration-150" style={{ width: progress + "%" }} />
+        <div
+          className="h-full bg-gradient-to-r from-[#0e2366] via-[#1d3bbb] to-[#f59e0b] origin-left"
+          style={{ transform: `scaleX(${progress / 100})`, willChange: "transform" }}
+        />
       </div>
 
       <main className="pt-24 md:pt-32 pb-20 bg-white">
