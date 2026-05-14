@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlogApplyForm from "@/components/BlogApplyForm";
@@ -76,8 +76,8 @@ export default function BlogPostPage() {
   const post = getPostBySlug(slug);
   const relatedPosts = getPublishedPosts().filter((p) => p.slug !== slug).slice(0, 3);
 
-  const [progress, setProgress] = useState(0);
   const [shareUrl, setShareUrl] = useState("");
+  const progressBarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setShareUrl(window.location.href);
@@ -88,8 +88,12 @@ export default function BlogPostPage() {
       requestAnimationFrame(() => {
         const h = document.documentElement;
         const total = h.scrollHeight - h.clientHeight;
-        const pct = total > 0 ? (h.scrollTop / total) * 100 : 0;
-        setProgress(pct);
+        const pct = total > 0 ? h.scrollTop / total : 0;
+        // Update DOM directly — bypasses React render cycle so we don't
+        // re-render the whole page component on every scroll frame.
+        if (progressBarRef.current) {
+          progressBarRef.current.style.transform = `scaleX(${pct})`;
+        }
         ticking = false;
       });
     };
@@ -131,8 +135,9 @@ export default function BlogPostPage() {
       {/* Reading progress bar */}
       <div className="fixed top-0 left-0 right-0 h-1 z-40 bg-neutral-100">
         <div
+          ref={progressBarRef}
           className="h-full bg-gradient-to-r from-[#0e2366] via-[#1d3bbb] to-[#f59e0b] origin-left"
-          style={{ transform: `scaleX(${progress / 100})`, willChange: "transform" }}
+          style={{ transform: "scaleX(0)" }}
         />
       </div>
 
